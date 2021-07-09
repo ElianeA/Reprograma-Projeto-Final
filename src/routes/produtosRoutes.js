@@ -12,7 +12,7 @@ router.get('/', controller.mostraProdutos)
 router.get('/', controller.mostraProdutosInstituicao)
 
 //Ler todos os produtos por id -> GET -> find()
-router.get('/:id', controlerr.getById)
+router.get('/:id', controller.getById)
 
 //Ler todos os produtos por bairro -> GET -> find()
 
