@@ -8,6 +8,9 @@ router.post('/', controller.criaInstituicao)
 //READ -> GET -> find()
 router.get('/', controller.mostraInstituicoes)
 
+//Ler todos as instituicoes  por id -> GET -> find()
+router.get('/:id', controlerr.getById)
+
 //UPDATE -> PATCH -> getById() ou  findOne e save()
 router.patch('/:id', controller.atualizaInstituicao)
 

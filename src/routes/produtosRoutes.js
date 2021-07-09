@@ -11,6 +11,9 @@ router.get('/', controller.mostraProdutos)
 //Ler por produto -> GET -> find()
 router.get('/', controller.mostraProdutosInstituicao)
 
+//Ler todos os produtos por id -> GET -> find()
+router.get('/:id', controlerr.getById)
+
 //Ler todos os produtos por bairro -> GET -> find()
 
 //Atualizar alguma informação do produto -> Patch -> update()

@@ -1,10 +1,13 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 
+const DATABASE_URL = process.env.MONGODB_URI
+
 const connect = () => {
-    mongoose.connect(process.env.DATABASE_URL, {
+    mongoose.connect(DATABASE_URL, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useCreateIndex: true
         })
         .then(() => {
 

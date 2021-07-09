@@ -34,8 +34,18 @@ const mostraProdutos = async(req, res) => {
 }
 
 //Mostra Produto por Id
-
-//Mostra Produto por Bairro
+const getById = async(req, res) => {
+        try {
+            const produto = Produto.findById(req.params.id)
+            if (produto == null) {
+                return res.status(404).json({ message: 'produto não encontrado' })
+            }
+            res.json(produto)
+        } catch (error) {
+            res.status(500).json({ message: error.message })
+        }
+    }
+    //Mostra Produto por Bairro
 
 //Mostra Produto por instituicao
 const mostraProdutosInstituicao = async(req, res) => {
@@ -84,6 +94,7 @@ const deleteProduto = async(req, res) => {
 module.exports = {
     criaProduto,
     mostraProdutos,
+    getById,
     mostraProdutosInstituicao,
     atualizaProduto,
     deleteProduto

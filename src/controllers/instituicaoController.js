@@ -43,8 +43,18 @@ const mostraInstituicoes = async(req, res) => {
 }
 
 //Mostra instituicões por id
-
-//Mostra instituições por bairro
+const getById = async(req, res) => {
+        try {
+            const instituicao = Instituicao.findById(req.params.id)
+            if (instituicao == null) {
+                return res.status(404).json({ message: 'Instituicao  não encontrado' })
+            }
+            res.json(instituicao)
+        } catch (error) {
+            res.status(500).json({ message: error.message })
+        }
+    }
+    //Mostra instituições por bairro
 
 //Moatra instituições por produto
 
@@ -112,6 +122,7 @@ const deleteInstituicao = async(req, res) => {
 module.exports = {
     criaInstituicao,
     mostraInstituicoes,
+    getById,
     atualizaInstituicao,
     deleteInstituicao
 }

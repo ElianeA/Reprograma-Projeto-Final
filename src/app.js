@@ -1,13 +1,22 @@
-const express = require("express");
-const cors = require("cors");
-const db = require("./data/dbConfig");
-const index = require("./routes/index")
-const filmes = require("./routes/movieRoutes")
-db.connect();
+const express = require('express')
+const cors = require("cors")
+
+// conectar db
+const db = require('./src/data/database')
+db.connect()
+
 const app = express()
-app.use(cors());
+
+app.use(cors())
 app.use(express.json())
-app.use("/", index)
-app.use("/filmes", filmes)
+
+// usar as rotas
+const index = require('./src/routes/index')
+const instituicao = require('./src/routes/instituicoesRoutes')
+const produto = require('./src/routes/produtosRoutes')
+
+app.use('/', index)
+app.use('/instituicoes', instituicao)
+app.use('/produtos', produto)
 
 module.exports = app
