@@ -1,0 +1,28 @@
+{
+    "name": "reprograma-projeto-final",
+    "version": "1.0.0",
+    "description": "Projeto final de conclusão do curso Backend da turma 11 Todas em tech do Reprograma",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ElianeA/Reprograma-Projeto-Final.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ElianeA/Reprograma-Projeto-Final/issues"
+    },
+    "homepage": "https://github.com/ElianeA/Reprograma-Projeto-Final#readme",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "mongoose": "^5.13.2"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.9"
+    }
+}
