@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const { request } = require('../app')
 const Instituicao = require('../models/instituicao')
+const Produto = require('../models/produto')
 
 //Cria instituicao
 const criaInstituicao = async(req, res) => {
@@ -57,7 +57,16 @@ const getById = async(req, res) => {
 }
 
 //Mostra instituições por bairro
-
+const mostraBairro = async(req, res) => {
+    try {
+        const instituicao = await Instituicao.find({
+            bairro: req.query.bairro
+        })
+        res.status(200).json(instituicao)
+    } catch (error) {
+        res.status(404).json({ message: error.message })
+    }
+}
 
 //Moatra instituições por produto
 
@@ -127,6 +136,7 @@ module.exports = {
     criaInstituicao,
     mostraInstituicoes,
     getById,
+    mostraBairro,
     atualizaInstituicao,
     deleteInstituicao
 }

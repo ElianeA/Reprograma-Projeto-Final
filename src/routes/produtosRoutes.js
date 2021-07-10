@@ -14,6 +14,7 @@ router.get('/', controller.mostraProdutos)
 router.get('/:id', controller.getById)
 
 //Ler todos os produtos por bairro -> GET -> find()
+router.get('/bairro', controller.mostraBairro)
 
 //Atualizar alguma informação do produto -> Patch -> update()
 router.patch('/:id', controller.atualizaProduto)

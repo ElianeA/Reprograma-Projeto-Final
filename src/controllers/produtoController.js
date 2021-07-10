@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Produto = require('../models/produto');
+const Instituicao = require('../models/instituicao')
 
 //Cria Produto
 const criaProduto = async(req, res) => {
@@ -47,14 +48,17 @@ const getById = async(req, res) => {
 }
 
 //Mostra Produto por Bairro
-
-//Mostra Produto por instituicao
-const mostraProdutosInstituicao = async(req, res) => {
-        const produtos = await Produto.find().populate('instituicao')
-        const produtosFiltrado = produtos.filter(produto => produto.instituicao.nome = nome)
-
-        return res.status(200).json(produtosFiltrado)
+const mostraBairro = async(req, res) => {
+        try {
+            const produto = await Produto.find({
+                bairro: req.query.bairro
+            }).populate('instituicao')
+            res.status(200).json(produto)
+        } catch (error) {
+            res.status(404).json({ message: error.message })
+        }
     }
+    //Mostra Produto por instituicao
     //Update produto
 const atualizaProduto = async(req, res) => {
     const encontraProduto = await Produto.findById(req.params.id)
@@ -96,6 +100,7 @@ module.exports = {
     criaProduto,
     mostraProdutos,
     getById,
+    mostraBairro,
     atualizaProduto,
     deleteProduto
 }
