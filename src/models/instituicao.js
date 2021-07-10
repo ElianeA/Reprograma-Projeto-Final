@@ -42,11 +42,6 @@ const instituicaoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    produto: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: false,
-        ref: 'produto'
-    },
     criadoEm: {
         type: Date,
         required: true,

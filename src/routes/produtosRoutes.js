@@ -9,7 +9,6 @@ router.post('/', controller.criaProduto)
 router.get('/', controller.mostraProdutos)
 
 //Ler por produto -> GET -> find()
-router.get('/', controller.mostraProdutosInstituicao)
 
 //Ler todos os produtos por id -> GET -> find()
 router.get('/:id', controller.getById)

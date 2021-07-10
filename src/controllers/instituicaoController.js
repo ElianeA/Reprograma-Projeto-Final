@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const { request } = require('../app')
 const Instituicao = require('../models/instituicao')
 
 //Cria instituicao
@@ -44,19 +45,22 @@ const mostraInstituicoes = async(req, res) => {
 
 //Mostra instituicões por id
 const getById = async(req, res) => {
-        try {
-            const instituicao = Instituicao.findById(req.params.id)
-            if (instituicao == null) {
-                return res.status(404).json({ message: 'Instituicao  não encontrado' })
-            }
-            res.json(instituicao)
-        } catch (error) {
-            res.status(500).json({ message: error.message })
+    try {
+        const instituicao = await Instituicao.findById(req.params.id)
+        if (instituicao == null) {
+            return res.status(404).json({ message: 'Instituicao  não encontrada' })
         }
+        res.status(200).json(instituicao)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
     }
-    //Mostra instituições por bairro
+}
+
+//Mostra instituições por bairro
+
 
 //Moatra instituições por produto
+
 
 //Update instituicao
 const atualizaInstituicao = async(req, res) => {

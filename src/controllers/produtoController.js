@@ -35,17 +35,18 @@ const mostraProdutos = async(req, res) => {
 
 //Mostra Produto por Id
 const getById = async(req, res) => {
-        try {
-            const produto = Produto.findById(req.params.id)
-            if (produto == null) {
-                return res.status(404).json({ message: 'produto não encontrado' })
-            }
-            res.json(produto)
-        } catch (error) {
-            res.status(500).json({ message: error.message })
+    try {
+        const produto = await Produto.findById(req.params.id)
+        if (produto == null) {
+            return res.status(404).json({ message: 'produto não encontrado' })
         }
+        res.status(200).json(produto)
+    } catch (error) {
+        res.status(500).json({ message: error.message })
     }
-    //Mostra Produto por Bairro
+}
+
+//Mostra Produto por Bairro
 
 //Mostra Produto por instituicao
 const mostraProdutosInstituicao = async(req, res) => {
@@ -95,7 +96,6 @@ module.exports = {
     criaProduto,
     mostraProdutos,
     getById,
-    mostraProdutosInstituicao,
     atualizaProduto,
     deleteProduto
 }

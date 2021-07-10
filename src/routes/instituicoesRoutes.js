@@ -11,6 +11,8 @@ router.get('/', controller.mostraInstituicoes)
 //Ler todos as instituicoes  por id -> GET -> find()
 router.get('/:id', controller.getById)
 
+//Ler todas as instituicoes por bairro -> GET->find
+
 //UPDATE -> PATCH -> getById() ou  findOne e save()
 router.patch('/:id', controller.atualizaInstituicao)
 
