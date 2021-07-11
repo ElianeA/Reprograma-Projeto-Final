@@ -62,10 +62,12 @@ O **ReciclaJa** é uma API RESTfull de consulta a cooperativas e instituições 
 <br>
 
 ##  Documentação
-Acesse o board para conferir as informações de forma visual: https://miro.com/app/board/o9J_lA7Nns8=/
 
-### Regra de negócios - Cooperativas/Instituição 
+### Regra de negócios 
 - [x] A cooperativa/instituição não pode ser cadastrada mais de uma vez;
+- [x] O sistema deve ser capaz de criar, listar todos, listar por id, atualizar e excluir;
+- [x] O cadastro só pode ser realizado com todos os campos preenchidos.
+- [x] O produto deve estar vinculado a uma cooperativa/instituição;
 - [x] O sistema deve ser capaz de criar, listar todos, listar por id, atualizar e excluir;
 - [x] O cadastro só pode ser realizado com todos os campos preenchidos.
 
@@ -76,11 +78,6 @@ Acesse o board para conferir as informações de forma visual: https://miro.com/
 - [x]  **"/get/instituicoes/bairro"** Deverá retornar cooperativas/instituições baseada no bairro;
 - [x]  **"/patch/instituicoes/[id]"** Deverá atualizar algum dado especÍfico da cooperativa/instituição baseada em seu Id;
 - [x]  **"/delete/instituicoes/[id]"** Deverá excluir uma cooperativa/instituição baseada em seu Id;
-
-### Regra de negócios - Produtos
-- [x] O produto deve estar vinculado a uma cooperativa/instituição;
-- [x] O sistema deve ser capaz de criar, listar todos, listar por id, atualizar e excluir;
-- [x] O cadastro só pode ser realizado com todos os campos preenchidos.
 
 ### Rotas - Produtos
 - [x]  **"/post/produtos"** Deverá criar um produto;
