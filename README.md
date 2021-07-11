@@ -107,6 +107,8 @@ O **ReciclaJa** é uma API RESTfull de consulta a cooperativas e instituições 
 
 
 ### API deve retornar seguinte JSON:
+
+```jsx
 [
   {
     "criadoEm": "2021-07-09T19:57:36.909Z",
@@ -237,9 +239,9 @@ O **ReciclaJa** é uma API RESTfull de consulta a cooperativas e instituições 
  - Criar nova coleção de usuários que permita coletar informações de localidades que mais pesquisam as cooperativas/instituições e fornecer as mesmas para que as cooperativas possam traçar alguma estratégia recebimento de mais produtos, expandir sua localodade de atuação etc.
 
 ### Longo prazo
- - Expanão para as cidades circunvizinhas.
+ - Expansão para as cidades circunvizinhas.
 
 ## Eliane Almeida
-- [instagram] (https://www.instagram.com/nanny.almeida_/)
+- [instagram](https://www.instagram.com/nanny.almeida_/)
 - [linkedin](https://www.linkedin.com/in/eliane-v-almeida/)
 - [github](https://github.com/ElianeA)
